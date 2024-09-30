@@ -1,18 +1,29 @@
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     /* border: 1px solid white; */
-    font-family: 'poppins', sans-serif;
-    box-sizing: border-box;
+    
 }
 html{
     scroll-behavior: smooth;
 }
-
 body{
+    font-family: 'poppins', sans-serif;
     background: #080808;
     color: white;
 }
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-track{
+    background-color: rgb(219, 219, 219);
+}
+::-webkit-scrollbar-thumb{
+    background:#03C03C;
+}
+
 #header{
     width: 100%;
     height: 100vh;
@@ -21,13 +32,7 @@ body{
     background-position: center;
 }
 .container{
-    padding: 10px 10%;
-}
-
-.logo{
-    font-size: 30px;
-    font-weight: 800;
-    color:white;
+    padding: 7px 10%;
 }
 
 nav{
@@ -43,7 +48,7 @@ nav ul li{
     margin: 10px 20px;
 }
 nav ul li span{
-color: #03C03C;
+    color: #03C03C;
 }
 
 nav ul li a{
@@ -68,9 +73,10 @@ nav ul li a:hover::after{
 .header-text{
     margin-top: 20%;
     font-size: 30px;
+    padding: 0px;
 }
 .header-text h1{
-    font-size: 60px;
+    font-size: 50px;
     margin-top: 20px;
     margin-bottom: 10px;
 }
@@ -80,6 +86,81 @@ nav ul li a:hover::after{
 .header-text p span{
     color: #03C03C;
 }
+.text-animation{
+    font-size: 35px;
+    font-weight: 600;
+    min-width: 280px;
+  }
+  .text-animation span{
+    position: relative;
+  }
+  .text-animation span::before{
+    content: "Web Developer";
+    color:#03C03C;
+    animation: words 20s infinite;
+  }
+  .text-animation span::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid white;
+    right: -8px;
+    animation: cursor 0.3s infinite, typing 20s steps(14) infinite;
+  }
+  @keyframes cursor{
+    to{
+      border-left: 3px solid white;
+    }
+  }
+  @keyframes words{
+    0%,
+    20%{
+      content: "Frontend Designer";
+    }
+    21%,
+    40%{
+        content: "Web Designer";
+    }
+    41%,
+    60%{
+      content: "Data Analyst";
+    }
+    61%,
+    80%{
+      content: "Web Developer";
+    }
+    81%,
+    100%{
+      content: "Software Tester";
+    }
+  }
+  @keyframes typing{
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
+      width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+      width: calc(100% + 8px);
+    }
+  }
 .download-cv-btn{
     display: block;
     margin: 40px 5px;
@@ -116,9 +197,9 @@ nav ul li a:hover::after{
     flex-basis: 35%;
 }
 .about-col-1 img{
-    padding-block: 30px;
+    padding-block: 50px;
     width: 100%;
-    border-radius: 15px;
+    border-radius: 20px;
 }
 .about-col-2{
     padding-block: 30px;
@@ -133,7 +214,7 @@ nav ul li a:hover::after{
     padding-top: 5px;
     color: white;
     display: flex;
-    margin: 50px 0 40px;
+    margin: 50px 0px 40px;
 }
 .tab-titles span{
     color: #03C03C;
@@ -308,7 +389,7 @@ nav ul li a:hover::after{
     flex-basis: 35%;
 }
 .contact-right{
-    flex-basis: 60%;
+    flex-basis: 65%;
 }
 .contact-left p{
     margin-top: 30px;
@@ -377,9 +458,6 @@ nav .fas{
 }
 
 @media only screen and (max-device-width: 600px){
-    #header{
-        /* background-image: url(bg.jpg); */       /* --you can change image-- */
-    }
     .header-text{
         margin-top: 100%;
         font-size: 20px;
