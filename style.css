@@ -87,7 +87,7 @@ nav ul li a:hover::after{
     color: #03C03C;
 }
 .text-animation{
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 600;
     min-width: 280px;
   }
